@@ -7,6 +7,7 @@ export const CustomButton = styled(Link)`
     justify-content: center;
     min-width:100px;
     max-width: 210px;
+    white-space: nowrap;
     /* custom */
     background: ${({BackgroundColor}) => (
         BackgroundColor ? BackgroundColor : '#fff'

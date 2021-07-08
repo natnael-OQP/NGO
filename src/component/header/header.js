@@ -12,6 +12,7 @@ const NavLinks = css`
     padding:0 1rem;
     display: flex;
     text-decoration: none;
+    font-size: 1.05rem;
 `;
 // -- flex
 export const Flexy = css`
@@ -31,21 +32,30 @@ const Nav = styled.nav`
 // ----------------------------------------------- logo
 const Logo = styled(Link)`
     ${NavLinks}
+    font-style:italic ;
 `
 // ----------------------------------------------- menuBar
 const MenuBar = styled.i`
+    display: none;
 
 `
 // ----------------------------------------------- nav-menu-container
 const NavMenu = styled.div`
-    ${Flexy}
+    ${Flexy};
+    @media screen and (max-width:768px){
+        display: none;
+    }
 `
 // ----------------------------------------------- nav-menu-items(link)
 const NavMenuLink = styled(Link)`
     ${NavLinks}
+    
 `
+// ----------------------------------------------- contact ass button 
 const NavBtn = styled.div`
-
+    @media screen and (max-width:768px){
+        display: none;
+    }
 `
 //----------------------------------------------- header-component
 const Header = () => {
@@ -61,7 +71,12 @@ const Header = () => {
             )}
             </NavMenu>
             <NavBtn>
-                <CustomButton to="contact" backgroundColor = "green" color="red" big="true">contact as</CustomButton>
+                <CustomButton
+                    to="contact"
+                    BackgroundColor="#fb8500"
+                    Color="#fff"
+                    Font="16px"
+                >contact as</CustomButton>
             </NavBtn>
         </Nav>
     )
