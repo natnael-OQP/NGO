@@ -8,7 +8,7 @@ export const CustomButton = styled(Link)`
     min-width:100px;
     max-width: 210px;
     white-space: nowrap;
-    /* custom */
+    /* --------------------------------------------  we can customize BackgroundColor , Color , Padding , Fontsize ,*/
     background: ${({BackgroundColor}) => (
         BackgroundColor ? BackgroundColor : '#fff'
         )};
@@ -21,7 +21,7 @@ export const CustomButton = styled(Link)`
     font-size: ${({Font}) => (
         Font?Font:'14px '
     )};
-    /* X */
+    /* ----------------------------------------------------------------X-End-of-customize */
     text-decoration:none;
     border: none;
     box-shadow:1px 2px 8px rgba(0,0,0,0,6);
