@@ -138,23 +138,47 @@ const PrevButton = styled(IoArrowBack)`
 const NextButton = styled(IoArrowForward)`
     ${ArrowButton}
 `;
-// ---------------------------------------------------------------------  banner-component
-const  Banner = ({ slides }) => {
+// -----------------------------------------------------------------------------------------  banner-component
+const Banner = ({ slides }) => {
+    // initial-value
     const [counter, setCounter] = useState(0)
-    const length = slides.length
+    const length = slides.length;
+    const timeout = useRef(null);
+    // --------------------------------------auto play or auto next and auto prev function 
+    useEffect(() => {
+        const next = () => {
+            setCounter(counter => (counter === length - 1 ? 0 : counter + 1))
+            
+        }
+        
+        timeout.counter = setTimeout(next, 2000);
+
+        return function () {
+            if (timeout.counter) {
+                clearTimeout(timeout.counter);
+            }
+        }
+    }, [counter, length])
     
-
-
+    if (!Array.isArray(slides) && slides.length <= 0) {
+        return null;
+    }
     //---------------------------- next-barrow-click 
     const next = () => {
+        if (timeout.counter) {
+            clearTimeout(timeout.counter);
+        }
         setCounter(counter === length - 1 ? 0 : counter + 1)
     }
 
     //--------------------------- Prev-arrow-click 
     const prev = () => {
+        if (timeout.counter) {
+            clearTimeout(timeout.counter);
+        }
         setCounter(counter === 0 ? length - 1 : counter - 1 )
     }
-    
+
     return (
         <BannerContainers>
             <BannerWrapper>
