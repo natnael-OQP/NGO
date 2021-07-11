@@ -25,10 +25,16 @@ export const Flexy = css`
 const Nav = styled.nav`
     height: 62px;
     padding: .3rem 2rem;
-    background: #845EC2;
+    /* background:#000d1e; */
+    max-width: 1400px;
+    margin: 0 auto;
     ${Flexy};
     justify-content: space-between;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:50;
 `
 // ----------------------------------------------- logo
 const Logo = styled(Link)`
@@ -81,10 +87,8 @@ const Header = () => {
             <NavBtn>
                 <CustomButton
                     to="contact"
-                    BackgroundColor="#fb8500"
-                    Color="#fff"
                     Font="16px"
-                >contact as</CustomButton>
+                >Donate now</CustomButton>
             </NavBtn>
         </Nav>
     )

@@ -10,7 +10,7 @@ export const CustomButton = styled(Link)`
     white-space: nowrap;
     /* --------------------------------------------  we can customize BackgroundColor , Color , Padding , Fontsize ,*/
     background: ${({BackgroundColor}) => (
-        BackgroundColor ? BackgroundColor : '#fff'
+        BackgroundColor ? BackgroundColor : '#75A608'
         )};
     color: ${({Color}) => (
         Color ? Color : '#fff'
@@ -28,6 +28,7 @@ export const CustomButton = styled(Link)`
     cursor: pointer;
     transition:.4s ease all;
     &:hover {
+        background-color: #83BA09;
         transform: translateY(-3px);
     }
 `
