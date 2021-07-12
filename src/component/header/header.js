@@ -72,11 +72,11 @@ const NavBtn = styled.div`
     }
 `
 //----------------------------------------------- header-component
-const Header = () => {
+const Header = ({toggle}) => {
     return (
         <Nav>
             <Logo to='/' >NGO</Logo>
-            <MenuBar />
+            <MenuBar onClick={toggle} />
             <NavMenu>
             {
                 menuData.map((items, index) => (
@@ -85,10 +85,11 @@ const Header = () => {
             )}
             </NavMenu>
             <NavBtn>
-                <CustomButton
-                    to="contact"
+                <CustomButton 
+                    to="/contact"
                     Font="16px"
                 >Donate now</CustomButton>
+                
             </NavBtn>
         </Nav>
     )

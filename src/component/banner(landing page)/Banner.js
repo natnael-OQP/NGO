@@ -73,7 +73,7 @@ const BannerSlider = styled.div`
         z-index:2;
         opacity: 0.5;
         background: linear-gradient(
-            to bottom,rgba(0,0,0,1),rgba(0,0,0,0.5),rgba(0,0,0,0.4) 
+            to bottom,rgba(0,0,0,9),rgba(0,0,0,0.9),rgba(0,0,0,9) 
         );
     }
 `;
@@ -101,7 +101,7 @@ const BannerContent = styled.div`
         h1{
             margin-right: 2rem;
             margin-bottom: .8rem;
-            font-size:clamp(1rem,8vw,2.9rem);
+            font-size:clamp(1.5rem,8vw,2.9rem);
             text-shadow:0 0 20px rgba(0,0,0,0.5);
             font-weight:500;
             text-transform:capitalize;
@@ -112,6 +112,20 @@ const BannerContent = styled.div`
             text-shadow:0 0 20px rgba(0,0,0,0.5);
             font-size: 1.1rem;
             padding-left: .5rem;
+            margin-right: 4rem;
+        }
+        @media screen and (max-width:768px){
+            left: 30px;
+            margin-bottom: .5rem;
+        }
+        @media screen and (max-width:488px){
+            left: 15px;
+            margin-bottom: 0rem;
+        }
+        @media screen and (max-width:488px){
+            left: 15px;
+            margin-bottom: 0rem;
+
         }
 `;
 
@@ -144,25 +158,27 @@ const Banner = ({ slides }) => {
     const [counter, setCounter] = useState(0)
     const length = slides.length;
     const timeout = useRef(null);
-    // --------------------------------------auto play or auto next and auto prev function 
-    useEffect(() => {
-        const next = () => {
-            setCounter(counter => (counter === length - 1 ? 0 : counter + 1))
-            
-        }
-        
-        timeout.counter = setTimeout(next, 2000);
 
-        return function () {
-            if (timeout.counter) {
-                clearTimeout(timeout.counter);
-            }
-        }
-    }, [counter, length])
+    // --------------------------------------auto play or auto next and auto prev function 
+    // useEffect(() => {
+    //     const next = () => {
+    //         setCounter(counter => (counter === length - 1 ? 0 : counter + 1))
+            
+    //     }
+        
+    //     timeout.counter = setTimeout(next, 2000);
+
+    //     return function () {
+    //         if (timeout.counter) {
+    //             clearTimeout(timeout.counter);
+    //         }
+    //     }
+    // }, [counter, length])
     
-    if (!Array.isArray(slides) && slides.length <= 0) {
-        return null;
-    }
+    // if (!Array.isArray(slides) && slides.length <= 0) {
+    //     return null;
+    // }
+
     //---------------------------- next-barrow-click 
     const next = () => {
         if (timeout.counter) {
