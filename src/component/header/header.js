@@ -34,7 +34,7 @@ const Nav = styled.nav`
     top: 0;
     left: 0;
     width: 100%;
-    z-index:50;
+    z-index:100;
 `
 // ----------------------------------------------- logo
 const Logo = styled(Link)`
@@ -44,6 +44,10 @@ const Logo = styled(Link)`
 // ----------------------------------------------- menuBar
 const MenuBar = styled(FaBars)`
     display: none;
+    transition: all .3s ease-in-out;
+    &:hover {
+        transform: rotate(720deg);
+    }
     @media screen and (max-width:768px){
         display: block;
         cursor: pointer;
@@ -85,7 +89,10 @@ const Header = ({toggle}) => {
             )}
             </NavMenu>
             <NavBtn>
-                <CustomButton 
+                <CustomButton
+                    css={`
+                        /* z-index:1010; */
+                    `}
                     to="/contact"
                     Font="16px"
                 >Donate now</CustomButton>

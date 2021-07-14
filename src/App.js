@@ -5,6 +5,8 @@ import GlobalStyle from './globalStyle';
 // import {Route,Switch} from 'react-router-dom';
 import { SliderData } from './data/SliderData'
 import Dropdown from './component/Dropdown/Dropdown';
+import InfoSection from './component/infoSection/InfoSection';
+import { InfoData } from './data/InfoData';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +21,7 @@ function App() {
       <Banner slides={SliderData} />
       <Header toggle={toggle}/>
       <Dropdown toggle={toggle} isOpen={isOpen} />
+      <InfoSection {...InfoData} />
     </>
   );
 }

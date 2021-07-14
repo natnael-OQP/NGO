@@ -24,7 +24,7 @@ const DropDownContainer = styled.div`
 const Icon = styled.div`
     position: absolute;
     top: 1.2rem;
-    right: 1.2rem;
+    right: 2rem;
     background: transparent;
 `;
 
