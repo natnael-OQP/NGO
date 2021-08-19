@@ -50,6 +50,7 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     justify-content:center;
     align-items:flex-start;
+    order: ${({ reverse }) => (reverse ? 2 : 1 )}
     h1{
         font-weight:600;
         font-size:40px;
@@ -92,8 +93,9 @@ const Ptwo = styled.p`
         font-size: .87rem;
     }
 `;
-const ColumnRight = styled.div` 
-
+const ColumnRight = styled.div`
+    padding: 1rem;
+    order:${({ reverse }) => (reverse ? 1 : 2)};
 `;
 
 const Image = styled.img`
@@ -124,7 +126,7 @@ const InfoSection = ({ heading, reverse, paragraphOne, paragraphTwo, buttonLabel
     return (
         <InfoSectionContainer>
             <InfoSectionWrapper>
-                <ColumnLeft reverse={reverse} > 
+                <ColumnLeft> 
                     <h1> {heading} </h1>
                     <Pone>{paragraphOne}</Pone>
                     <Ptwo>{paragraphTwo}</Ptwo>

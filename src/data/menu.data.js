@@ -4,15 +4,15 @@ export const menuData = [
         link: '/home'
     },
     {
-        title: 'Cases',
-        link: '/cases'
+        title: 'Causes',
+        link: '/causes'
     },
     {
         title: 'About',
         link: '/about'
     },
     {
-        title: 'Contact',
-        link: '/contact'
+        title: 'Test',
+        link: '/test'
     }
 ]

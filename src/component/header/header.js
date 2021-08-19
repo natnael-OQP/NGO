@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled ,{css} from 'styled-components/macro';
 import {Link} from 'react-router-dom'
 import { menuData } from '../../data/menu.data';
@@ -15,7 +15,7 @@ const NavLinks = css`
     font-size: 1.05rem;
 `;
 // -- flex
-export const Flexy = css`
+const Flexy = css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,17 +25,22 @@ export const Flexy = css`
 const Nav = styled.nav`
     height: 62px;
     padding: .3rem 2rem;
-    /* background:#000d1e; */
     max-width: 1400px;
     margin: 0 auto;
     ${Flexy};
     justify-content: space-between;
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
+    background:${({navbar})=>(navbar? "#1A1C2C" : "")};
+    
     width: 100%;
     z-index:100;
 `
+// -- when active
+const active = styled.nav`
+    background-color: #1A1C2C;
+`;
 // ----------------------------------------------- logo
 const Logo = styled(Link)`
     ${NavLinks}
@@ -76,9 +81,11 @@ const NavBtn = styled.div`
     }
 `
 //----------------------------------------------- header-component
-const Header = ({toggle}) => {
+const Header = ({ toggle,navbar }) => {
+    // logic part 
+    
     return (
-        <Nav>
+        <Nav navbar={navbar} >
             <Logo to='/' >NGO</Logo>
             <MenuBar onClick={toggle} />
             <NavMenu>
