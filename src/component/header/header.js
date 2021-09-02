@@ -1,6 +1,11 @@
 import React from 'react';
+// styled component
 import styled ,{css} from 'styled-components/macro';
-import {Link} from 'react-router-dom'
+// react router
+import { Link as LinkR } from 'react-router-dom';
+// react scroll
+import { Link as LinkS } from 'react-scroll';
+
 import { menuData } from '../../data/menu.data';
 import { CustomButton } from '../button/button';
 import { FaBars } from 'react-icons/fa'
@@ -13,6 +18,7 @@ const NavLinks = css`
     display: flex;
     text-decoration: none;
     font-size: 1.05rem;
+    cursor: pointer;
 `;
 // -- flex
 const Flexy = css`
@@ -33,16 +39,12 @@ const Nav = styled.nav`
     top: 0;
     left: 0;
     background:${({navbar})=>(navbar? "#1A1C2C" : "")};
-    
     width: 100%;
     z-index:100;
 `
-// -- when active
-const active = styled.nav`
-    background-color: #1A1C2C;
-`;
+
 // ----------------------------------------------- logo
-const Logo = styled(Link)`
+const Logo = styled(LinkS)`
     ${NavLinks}
     font-style:italic ;
 `
@@ -70,9 +72,11 @@ const NavMenu = styled.div`
     }
 `
 // ----------------------------------------------- nav-menu-items(link)
-const NavMenuLink = styled(Link)`
+const NavMenuLink = styled(LinkS)`
     ${NavLinks}
-    
+    &.active{
+        border-bottom: 3px solid #01bf71;
+    }
 `
 // ----------------------------------------------- contact ass button 
 const NavBtn = styled.div`
@@ -100,7 +104,7 @@ const Header = ({ toggle,navbar }) => {
                     css={`
                         /* z-index:1010; */
                     `}
-                    to="/contact"
+                    to="contact"
                     Font="16px"
                 >Donate now</CustomButton>
                 

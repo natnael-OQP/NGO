@@ -7,8 +7,8 @@ export const InfoData ={
         paragraphOne:"I'm a paragraph. go to `data/InfoData.js` add your own text and edit me Create a subtitle that summarizes your post in a few short, punchy sentences",
         paragraphTwo:" The legal definition of a charitable organization (and of charity) varies between countries and in some instances regions of the country. The regulation, the tax treatment, and the way in which charity law affects charitable organizations also vary.",
         buttonLabel: "View Causes",
-        image:ImageOne,
-        reverse: true,
+        image: ImageOne ,
+        imageStart: true,
     }
 
 export const InfoDataTwo = {

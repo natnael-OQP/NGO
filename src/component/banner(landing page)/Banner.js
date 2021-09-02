@@ -196,7 +196,7 @@ const Banner = ({ slides }) => {
     }
 
     return (
-        <BannerContainers>
+        <BannerContainers id="home">
             <BannerWrapper>
                 {
                     slides.map((slide, index) => (

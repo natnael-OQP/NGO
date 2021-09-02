@@ -9,7 +9,7 @@ const Navbar = () => {
       setIsOpen(!isOpen);
     }
     window.addEventListener('scroll', () => {
-        if (window.scrollY >=120) {
+        if (window.scrollY >=320) {
             setNavBar(true);
         }
         else {

@@ -3,7 +3,10 @@ import styled, { css } from 'styled-components/macro';
 import { menuData } from '../../data/menu.data';
 import { CustomButton } from '../button/button';
 import { FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+// react router
+import { Link as LinkR } from 'react-router-dom';
+// react scroll
+import { Link as LinkS } from 'react-scroll';
 
 // --------------------------------------------------------
 const DropDownContainer = styled.div`
@@ -62,8 +65,9 @@ const DropDownMenu = styled.div`
 `;
 
 // --------------------------------------------------------
-const DropDownMenuLink = styled(Link)`
+const DropDownMenuLink = styled(LinkS)`
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content:center;
     color: #fff;
@@ -104,7 +108,7 @@ const Dropdown = ({toggle,isOpen}) => {
                 <DropDownMenu>
                     {
                         menuData.map((item,index) => (
-                            <DropDownMenuLink key={index} to={item.link}>
+                            <DropDownMenuLink key={index} to={item.link} onClick={toggle} >
                                 {item.title}
                             </DropDownMenuLink>
                         ))

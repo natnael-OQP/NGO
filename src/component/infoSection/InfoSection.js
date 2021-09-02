@@ -1,6 +1,6 @@
 import React from 'react'
 import styled,{css} from 'styled-components/macro';
-import { CustomButton } from '../button/button';
+import { customButtonS } from '../button/button';
 
 const InfoSectionContainer = styled.section`
     padding: 5.6rem 0;
@@ -25,6 +25,7 @@ const InfoSectionWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 5.5rem;
+    grid-template-areas:${({imageStart})=> imageStart ? `'col2 col1'` : `'col1 col2'`};
     @media screen and (max-width:1210px){
         width: 96%;
         gap: 1rem;
@@ -95,9 +96,8 @@ const Ptwo = styled.p`
 `;
 const ColumnRight = styled.div`
     padding: 1rem;
-    order:${({ reverse }) => (reverse ? 1 : 2)};
 `;
-
+// -----------------  image
 const Image = styled.img`
     width:560px;
     height: 420px;
@@ -122,15 +122,22 @@ const Image = styled.img`
     }
 `;
 
-const InfoSection = ({ heading, reverse, paragraphOne, paragraphTwo, buttonLabel, image }) => {
+const InfoSection = ({ heading, imageStart, paragraphOne, paragraphTwo, buttonLabel, image }) => {
     return (
-        <InfoSectionContainer>
-            <InfoSectionWrapper>
-                <ColumnLeft> 
+        <InfoSectionContainer id="causes">
+            <InfoSectionWrapper imageStart={imageStart} >
+                <ColumnLeft > 
                     <h1> {heading} </h1>
                     <Pone>{paragraphOne}</Pone>
                     <Ptwo>{paragraphTwo}</Ptwo>
-                    <CustomButton
+                    <customButtonS
+                        to="home"
+                        smooth={true}
+                        durations={500}
+                        say={true}
+                        exact="true"
+                        offset={-60}
+
                         css={`
                             margin-top:1rem;
                             width:120px;
@@ -142,9 +149,9 @@ const InfoSection = ({ heading, reverse, paragraphOne, paragraphTwo, buttonLabel
                             justify-content: center;
                             
                         `}
-                    >{buttonLabel}</CustomButton>
+                    >{buttonLabel}</customButtonS>
                 </ColumnLeft>
-                <ColumnRight reverse={reverse} >    
+                <ColumnRight >    
                         <Image src={image} alt="charity" />
                 </ColumnRight>
             </InfoSectionWrapper>
