@@ -1,6 +1,5 @@
 import ImageOne from '../image/Image5.jpg'
 import ImageTwo from '../image/Image6.jpg'
-// import ImageThree from '../image/Image7.jpg'
 
 export const InfoData ={
         heading: "Who we are?",

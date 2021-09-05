@@ -40,7 +40,7 @@ const Nav = styled.nav`
     left: 0;
     background:${({navbar})=>(navbar? "#1A1C2C" : "")};
     width: 100%;
-    z-index:100;
+    z-index:1000;
 `
 
 // ----------------------------------------------- logo

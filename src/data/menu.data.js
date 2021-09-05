@@ -4,12 +4,12 @@ export const menuData = [
         link: 'home'
     },
     {
-        title: 'Causes',
-        link: 'causes'
-    },
-    {
         title: 'About',
         link: 'about'
+    },
+    {
+        title: 'Causes',
+        link: 'causes'
     },
     {
         title: 'Test',

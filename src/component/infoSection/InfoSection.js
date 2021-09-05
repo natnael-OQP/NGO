@@ -25,7 +25,6 @@ const InfoSectionWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 5.5rem;
-    grid-template-areas:${({imageStart})=> imageStart ? `'col2 col1'` : `'col1 col2'`};
     @media screen and (max-width:1210px){
         width: 96%;
         gap: 1rem;
@@ -124,7 +123,7 @@ const Image = styled.img`
 
 const InfoSection = ({ heading, imageStart, paragraphOne, paragraphTwo, buttonLabel, image }) => {
     return (
-        <InfoSectionContainer id="causes">
+        <InfoSectionContainer id="about">
             <InfoSectionWrapper imageStart={imageStart} >
                 <ColumnLeft > 
                     <h1> {heading} </h1>
