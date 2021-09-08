@@ -7,6 +7,11 @@ import InfoSection from '../component/infoSection/InfoSection';
 import { InfoData } from '../data/InfoData';
 // causes section
 import CausesComponent from '../component/cause/causes';
+// -- ShowCase
+import Showcase from '../component/showcase/showcase'; 
+// footer
+import Footer from '../component/footer/Footer';
+
 
 const HomePage = () => {
     return (
@@ -14,7 +19,9 @@ const HomePage = () => {
             <Navbar />
             <Banner slides={SliderData} />
             <InfoSection {...InfoData} />
-            <CausesComponent/>
+            <Showcase/>
+            <CausesComponent />
+            <Footer/>
         </>
     )
 }

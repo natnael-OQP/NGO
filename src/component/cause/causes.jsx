@@ -27,6 +27,9 @@ const CauseHeading = styled.h1`
     line-height:56px;
     font-family: 'Lora', serif;
     color: #1A1C2C;
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
 `
 
 const CausesWrapper = styled.div`
