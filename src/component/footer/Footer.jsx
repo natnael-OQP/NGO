@@ -1,18 +1,27 @@
-// import React from 'react'
-// // styled component
+import React from 'react'
+// styled component
+import styled from 'styled-components'
+
+const FooterContainer = styled.div`
+
+`;
+
+const FooterWrapper = styled.div`
+
+`;
 
 
 
-// const Footer = () => {
-//     return (
-//         <>
-//             <FooterContainer>
-//                 <FooterWrapper>
+const Footer = () => {
+    return (
+        <>
+            <FooterContainer>
+                <FooterWrapper>
                 
-//                 </FooterWrapper>
-//             </FooterContainer>
-//         </>
-//     )
-// }
+                </FooterWrapper>
+            </FooterContainer>
+        </>
+    )
+}
 
-// export default Footer;
+export default Footer;
