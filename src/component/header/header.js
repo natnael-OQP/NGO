@@ -2,7 +2,7 @@ import React from 'react';
 // styled component
 import styled ,{css} from 'styled-components/macro';
 // react scroll
-import { Link as LinkS } from 'react-scroll';
+import { Link as LinkS, animateScroll as scroll } from 'react-scroll';
 
 import { menuData } from '../../data/menu.data';
 import { CustomButton } from '../button/button';
@@ -12,7 +12,7 @@ import { FaBars } from 'react-icons/fa'
 //  -- nav-links
 const NavLinks = css`
     color:#fff;
-    padding:0 1rem;
+    margin-right:1rem;
     display: flex;
     text-decoration: none;
     font-size: 1.05rem;
@@ -44,7 +44,8 @@ const Nav = styled.nav`
 // ----------------------------------------------- logo
 const Logo = styled(LinkS)`
     ${NavLinks}
-    font-style:italic ;
+    font-style:italic;
+    
 `
 // ----------------------------------------------- menuBar
 const MenuBar = styled(FaBars)`
@@ -73,7 +74,7 @@ const NavMenu = styled.div`
 const NavMenuLink = styled(LinkS)`
     ${NavLinks}
     &.active{
-        border-bottom: 3px solid #01bf71;
+        border-bottom: 1px solid #01bf71;
     }
 `
 // ----------------------------------------------- contact ass button 
@@ -85,15 +86,27 @@ const NavBtn = styled.div`
 //----------------------------------------------- header-component
 const Header = ({ toggle,navbar }) => {
     // logic part 
-    
+    const toggleHome = () => {
+        scroll.scrollToTop()
+    }
     return (
         <Nav navbar={navbar} >
-            <Logo to='/' >NGO</Logo>
+            <Logo to='/' onClick={toggleHome} >NGO</Logo>
             <MenuBar onClick={toggle} />
             <NavMenu>
             {
                 menuData.map((items, index) => (
-                    <NavMenuLink key={index} to={items.link} > {items.title} </NavMenuLink>
+                    <NavMenuLink
+                        smooth={true}
+                        offset={-62}
+                        duration={500}
+                        spy={true}
+                    
+                    
+                        key={index}
+                        to={items.link}
+                    > {items.title} </NavMenuLink>
+
                 )
             )}
             </NavMenu>

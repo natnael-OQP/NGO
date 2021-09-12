@@ -1,10 +1,8 @@
 import React from 'react'
-import styled, { css } from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import { menuData } from '../../data/menu.data';
 import { CustomButton } from '../button/button';
 import { FaTimes } from 'react-icons/fa';
-// react router
-import { Link as LinkR } from 'react-router-dom';
 // react scroll
 import { Link as LinkS } from 'react-scroll';
 
@@ -108,7 +106,16 @@ const Dropdown = ({toggle,isOpen}) => {
                 <DropDownMenu>
                     {
                         menuData.map((item,index) => (
-                            <DropDownMenuLink key={index} to={item.link} onClick={toggle} >
+                            <DropDownMenuLink
+                                smooth={true}
+                                duration={500}
+                                offset={true}
+                                exact='true'
+
+                                key={index}
+                                to={item.link}
+                                onClick={toggle}
+                            >
                                 {item.title}
                             </DropDownMenuLink>
                         ))
@@ -118,7 +125,7 @@ const Dropdown = ({toggle,isOpen}) => {
                     <CustomButton
                         // Big='true'
                         Font="16px"
-                        to="/contact"
+                        to="/donate"
                         Color="#000b1a"
                         css={`
                             font-weight:600;
