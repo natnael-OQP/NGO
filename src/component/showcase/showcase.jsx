@@ -86,7 +86,7 @@ const H2 = styled.h2`
 `;
 
 const P = styled.p`
-margin-top: .5rem;
+    margin-top: .5rem;
     color: #83BA09;
     font-size: .9rem;
     font-weight: 600;
@@ -104,23 +104,23 @@ const Showcase = () => {
             <ShowcaseWrapper>
                 <ShowCase>
                     <Smile />
-                    <H2>340</H2>
+                    <H2>200</H2>
                     <P>Donors</P>
                 </ShowCase>
                 <ShowCase>
                     <Heart />
-                    <H2>340</H2>
-                    <P>Donors</P>
+                    <H2>2K</H2>
+                    <P>Children Saved</P>
                 </ShowCase>
                 <ShowCase>
                     <Money />
-                    <H2>340</H2>
-                    <P>Donors</P>
+                    <H2>12K</H2>
+                    <P>Donated</P>
                 </ShowCase>
                 <ShowCase>
                     <Hand />
                     <H2>340</H2>
-                    <P>Donors</P>
+                    <P>Volunteers</P>
                 </ShowCase>
             </ShowcaseWrapper>
         </>

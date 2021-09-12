@@ -1,8 +1,6 @@
 import React from 'react';
 // styled component
 import styled ,{css} from 'styled-components/macro';
-// react router
-import { Link as LinkR } from 'react-router-dom';
 // react scroll
 import { Link as LinkS } from 'react-scroll';
 
@@ -104,7 +102,7 @@ const Header = ({ toggle,navbar }) => {
                     css={`
                         /* z-index:1010; */
                     `}
-                    to="contact"
+                    to="/donate"
                     Font="16px"
                 >Donate now</CustomButton>
                 

@@ -12,7 +12,7 @@ export const menuData = [
         link: 'causes'
     },
     {
-        title: 'Test',
-        link: 'test'
+        title: 'Footer',
+        link: 'footer'
     }
 ]
