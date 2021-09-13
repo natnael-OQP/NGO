@@ -99,7 +99,7 @@ const Header = ({ toggle,navbar }) => {
                     <NavMenuLink
                         smooth={true}
                         offset={-62}
-                        duration={500}
+                        duration={1000}
                         spy={true}
                     
                     
@@ -112,12 +112,16 @@ const Header = ({ toggle,navbar }) => {
             </NavMenu>
             <NavBtn>
                 <CustomButton
+                    smooth={true}
+                    duration={500}
+                    spy={true}
                     css={`
-                        /* z-index:1010; */
+                        border-radius:.5rem;
+                        padding:.5rem 1.4rem; 
                     `}
                     to="/donate"
                     Font="16px"
-                >Donate now</CustomButton>
+                >Sign in</CustomButton>
                 
             </NavBtn>
         </Nav>
