@@ -38,7 +38,7 @@ const Nav = styled.nav`
     left: 0;
     background:${({navbar})=>(navbar? "#1A1C2C" : "")};
     width: 100%;
-    z-index:1000;
+    z-index:${({navbar})=>(navbar?1000:99)};
 `
 
 // ----------------------------------------------- logo

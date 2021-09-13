@@ -41,6 +41,7 @@ export const customButtonS = styled(LinkS)`
     min-width:100px;
     max-width: 210px;
     white-space: nowrap;
+    opacity: .7;
     /* --------------------------------------------  we can customize BackgroundColor , Color , Padding , Fontsize ,*/
     background: ${({BackgroundColor}) => (
         BackgroundColor ? BackgroundColor : '#75A608'

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled,{css} from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import ImageOne from '../../image/Image3.jpg'
 import ImageTwo from '../../image/Image7.jpg'
 import ImageThree from '../../image/Image6.jpg';

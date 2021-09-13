@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect} from 'react'
+import React,{useState,useRef} from 'react'
 import styled,{css} from 'styled-components/macro';
 import { CustomButton } from '../button/button'
 import { IoMdArrowForward } from 'react-icons/io'
